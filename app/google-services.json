@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "883480871779",
+    "project_id": "stylism-9c295",
+    "storage_bucket": "stylism-9c295.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:883480871779:android:c8a04fb77334193ce40956",
+        "android_client_info": {
+          "package_name": "com.example.stylism_fashion_ecommerce"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "883480871779-dqoki3hj7t20o0pseuannpga8kj9omjf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCMo0EkoL9IxUjSH_Ggr9c44Uz1xNcSvqk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "883480871779-dqoki3hj7t20o0pseuannpga8kj9omjf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

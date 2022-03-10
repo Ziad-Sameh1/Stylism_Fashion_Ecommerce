@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.App.Starting" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_foreground_app_icon</item>
+        <item name="postSplashScreenTheme">@style/Theme.Stylism_Fashion_Ecommerce</item>
+    </style>
+</resources>
