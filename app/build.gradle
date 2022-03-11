@@ -48,6 +48,8 @@ android {
 }
 
 dependencies {
+    def nav_version = "2.4.1"
+    def accompanist_version = "0.24.3-alpha"
 
     implementation platform('com.google.firebase:firebase-bom:29.1.0')
     implementation 'androidx.core:core-ktx:1.7.0'
@@ -75,5 +77,15 @@ dependencies {
     // Firebase Authentication
     implementation 'com.google.firebase:firebase-auth'
     implementation 'com.google.android.gms:play-services-auth:20.1.0'
+
+    // Nav Component
+    implementation "androidx.navigation:navigation-compose:$nav_version"
+
+    // Accompanist
+    implementation "com.google.accompanist:accompanist-systemuicontroller:$accompanist_version"
+
+    // Coil
+    implementation("io.coil-kt:coil-compose:2.0.0-rc01")
+    implementation("io.coil-kt:coil-gif:2.0.0-rc01")
 }
 apply plugin: 'com.google.gms.google-services'

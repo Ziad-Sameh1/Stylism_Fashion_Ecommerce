@@ -1,3 +1,12 @@
 <resources>
-    <string name="app_name">Stylism</string>
+    <string name="app_name" translatable="false">Stylism</string>
+    <string name="select_mode">Select Mode</string>
+    <string name="dark_mode">DARK MODE</string>
+    <string name="light_mode">LIGHT MODE</string>
+    <string name="high_quality_product">High Quality Product</string>
+    <string name="reach_everywhere">Reach Everywhere</string>
+    <string name="full_customization">Full Customization</string>
+    <string name="high_quality_product_desc">We offer you a high quality products with a good price and free shipping.</string>
+    <string name="reach_everywhere_desc">We can dispatch your order and deliver it to you where you are.</string>
+    <string name="full_customization_desc">You can customize your product color, size, or even its design so it fits your imagination.</string>
 </resources>
