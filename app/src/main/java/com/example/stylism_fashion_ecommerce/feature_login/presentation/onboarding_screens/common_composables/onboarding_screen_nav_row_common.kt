@@ -150,7 +150,9 @@ fun OnboardingScreenNavRowCommon(
                         }
                     }
                     3 -> {
-                        // TODO: Navigate to choose sign in methods screens
+                        navController.navigate(Screens.SignInMethodsScreen.route) {
+                            popUpTo(Screens.SignInMethodsScreen.route)
+                        }
                     }
                 }
             }, modifier = Modifier.background(MaterialTheme.colors.primary, shape = CircleShape)) {

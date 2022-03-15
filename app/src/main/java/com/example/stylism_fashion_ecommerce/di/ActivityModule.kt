@@ -25,6 +25,12 @@ object ActivityModule {
 
     @Singleton
     @Provides
+    fun provideEditedPreference(@ApplicationContext context: Context): SharedPreferences.Editor {
+        return context.getSharedPreferences(CONSTANTS.MY_PREFERENCES, MODE_PRIVATE).edit()
+    }
+
+    @Singleton
+    @Provides
     fun provideFirebaseAuth(): FirebaseAuth {
         return FirebaseAuth.getInstance()
     }

@@ -9,4 +9,26 @@
     <string name="high_quality_product_desc">We offer you a high quality products with a good price and free shipping.</string>
     <string name="reach_everywhere_desc">We can dispatch your order and deliver it to you where you are.</string>
     <string name="full_customization_desc">You can customize your product color, size, or even its design so it fits your imagination.</string>
+    <string name="sign_in_with_email_pass">Sign in With Email &amp; Password</string>
+    <string name="sign_in_with_google">Sign in With Google</string>
+    <string name="sign_in_with_phone_number">Sign in With Phone Number</string>
+    <string name="sign_in">Sign in</string>
+    <string name="welcome_back">Welcome back</string>
+    <string name="login_to_your_account">Login to your account</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="login">Login</string>
+    <string name="do_not_have_account">Don\'t have an account?</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="try_again">Try again</string>
+    <string name="wrong_email_pass">Wrong email or password!</string>
+    <string name="login_failed">Login Failed</string>
+    <string name="invalid_info">Invalid Information</string>
+    <string name="enter_correct_info">Please enter correct email and password.</string>
+    <string name="no_internet">You are currently offline. Please check your internet connection, then try again.</string>
+    <string name="already_have_account">Already have account?</string>
+    <string name="signing_up_failed">Signing Up Failed</string>
+    <string name="error_occurred">An error occurred. Please try again later.</string>
+    <string name="enter_valid_info">Please enter a valid email and password.</string>
 </resources>

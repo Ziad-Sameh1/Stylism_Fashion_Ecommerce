@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="select_mode">اختار وضع</string>
+    <string name="dark_mode">وضع ليلي</string>
+    <string name="light_mode">وضع نهاري</string>
+    <string name="high_quality_product">منتجات بجودة عالية</string>
+    <string name="reach_everywhere">بنوصل لاي مكان</string>
+    <string name="full_customization">تقدر تخصص منتجك</string>
+    <string name="high_quality_product_desc">احنا بنقدملك منتجات بجودة عالية وبسعر كويس وشحن مجاني</string>
+    <string name="reach_everywhere_desc">احنا بنجهز طلبك علي طول وبنوصلهولك لاي مكان انت فيه</string>
+    <string name="full_customization_desc">دلوقتي تقدر تختار لون وحجم وديزاين المنتج اللي انت  طلبته من غير ما تنزل تعمل كل ده بنفسك</string>
+    <string name="sign_in_with_email_pass">تسجيل الدخول بالايميل و كلمة السر</string>
+    <string name="sign_in_with_google">تسجيل الدخول عن طريق جوجل</string>
+    <string name="sign_in_with_phone_number">تسجيل الدخول برقم الهاتف</string>
+    <string name="sign_in">تسجيل الدخول</string>
+    <string name="welcome_back">اهلا بعودتك</string>
+    <string name="login_to_your_account">تسجيل الدخول الي حسابك</string>
+    <string name="email">بريدك الالكتروني</string>
+    <string name="password">كلمة السر</string>
+    <string name="forgot_password">هل نسيت كلمة السر؟</string>
+    <string name="login">تسجيل الدخول</string>
+    <string name="do_not_have_account">ليس لديك حساب؟</string>
+    <string name="sign_up">سجل الان</string>
+    <string name="try_again">حاول مجددا</string>
+    <string name="wrong_email_pass">يبدو ان البريد الالكتروني او كلمة السر الخاصة بك ليست صحيحة!</string>
+    <string name="login_failed">فشل تسجيل الدخول</string>
+    <string name="invalid_info">بيانات خاطئة</string>
+    <string name="enter_correct_info">برجاء ادخال بريد الكتروني وكلمة سر صحيحة.</string>
+    <string name="no_internet">انت الان غير متصل بالانترنت. برجاء التأكد من اتصالك بالانترنت ثم معاودة المحاولة.</string>
+    <string name="already_have_account">بالفعل لديك حساب؟</string>
+    <string name="signing_up_failed">فشل تسجيل الحساب</string>
+    <string name="error_occurred">لقد حدث خطأ. برجاء معاودة المحاولة في وقت لاحق.</string>
+    <string name="enter_valid_info">برجاء ادخال بريد الكتروني وكلمة سر صحيحة</string>
+</resources>
