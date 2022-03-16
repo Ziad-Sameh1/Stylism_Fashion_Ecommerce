@@ -16,7 +16,7 @@ import javax.inject.Inject
 @HiltViewModel
 class MainViewModel @Inject constructor(
     private val sharedPreferences: SharedPreferences,
-    private val firebaseAuth: FirebaseUser?,
+    private val firebaseUser: FirebaseUser?,
 ) : ViewModel() {
 
     private val _isLoadingState = mutableStateOf<Boolean>(true)
@@ -31,18 +31,26 @@ class MainViewModel @Inject constructor(
              * Here we need check if...
              * ... user opened the app for the first time -> open the first welcome screen
              * ... user opened the app before but he is not signed in -> open select your sign in method screen
-             * ... user opened the app before and he is signed in before -> open the home screen
+             * ... user opened the app before and he is signed in before -> is verified -> open home screen
+             * ... user opened the app before and he is signed in before -> not verified -> open verification screen
              * */
+            firebaseUser?.reload()
             if (sharedPreferences.getBoolean(CONSTANTS.IS_FIRST_TIME, true)) {
                 Log.i(TAG, "First Time Opening")
                 _startDestination.value = Screens.FirstBoardingScreen.route
             } else {
-                if (firebaseAuth == null) {
+                if (firebaseUser == null) {
                     Log.i(TAG, "Not First Time -> User not authenticated")
                     _startDestination.value = Screens.SignInMethodsScreen.route
                 } else {
-                    Log.i(TAG, "Not First Time -> User authenticated")
-                    // TODO: open home screen
+                    if (!firebaseUser.isEmailVerified) {
+                        Log.i(TAG, "Not First Time -> Waiting for email verification")
+                        Log.i(TAG, "Useremail: ${firebaseUser.email}")
+                        _startDestination.value = Screens.CheckYourEmailScreen.route
+                    } else {
+                        // TODO: Go to Home screen
+                        Log.i(TAG, "Not First Time -> User authenticated and verified")
+                    }
                 }
             }
             _isLoadingState.value = false

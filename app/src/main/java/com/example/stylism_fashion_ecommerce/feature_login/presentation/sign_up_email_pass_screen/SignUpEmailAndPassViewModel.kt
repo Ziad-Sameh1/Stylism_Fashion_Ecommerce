@@ -4,6 +4,8 @@ import android.util.Log
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
+import androidx.navigation.NavController
+import com.example.stylism_fashion_ecommerce.Screens
 import com.example.stylism_fashion_ecommerce.feature_login.data.resultListener.SignUpWithEmailAndPassResultListener
 import com.example.stylism_fashion_ecommerce.feature_login.domain.use_cases.SignUpWithEmailAndPasswordUseCase
 import com.example.stylism_fashion_ecommerce.utils.CONSTANTS.TAG
@@ -40,11 +42,11 @@ class SignUpEmailAndPassViewModel @Inject constructor(
     /*********************************************************************************************************************/
 
     fun onEmailTextFieldValueChanges(newValue: String) {
-        _emailTextField.value = newValue
+        _emailTextField.value = newValue.trim()
     }
 
     fun onPassTextFieldValueChanges(newValue: String) {
-        _passTextField.value = newValue
+        _passTextField.value = newValue.trim()
     }
 
     fun onPassVisibleStateChanges(newValue: Boolean) {
@@ -66,7 +68,7 @@ class SignUpEmailAndPassViewModel @Inject constructor(
     /*********************************************************************************************************************/
 
 
-    fun signUpWithEmailAndPass() {
+    fun signUpWithEmailAndPass(navController: NavController) {
         _isLoadingState.value = true
         if (CheckForm.checkEmail(email = emailTextField.value) && CheckForm.checkPassword(password = passTextField.value)) {
             signUpWithEmailAndPassUseCase(
@@ -76,7 +78,9 @@ class SignUpEmailAndPassViewModel @Inject constructor(
                     SignUpWithEmailAndPassResultListener {
                     override fun onSuccess(firebaseUser: FirebaseUser) {
                         _isLoadingState.value = false
-                        // TODO: Navigate to profile screen
+                        navController.navigate(Screens.CheckYourEmailScreen.route) {
+                            popUpTo(Screens.CheckYourEmailScreen.route)
+                        }
                     }
 
                     override fun onFailure(error: Throwable) {

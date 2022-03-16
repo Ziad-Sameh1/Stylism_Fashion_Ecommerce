@@ -12,10 +12,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Lock
-import androidx.compose.material.icons.filled.Person
-import androidx.compose.material.icons.filled.Visibility
-import androidx.compose.material.icons.filled.VisibilityOff
+import androidx.compose.material.icons.filled.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -68,7 +65,7 @@ fun SignInWithEmailAndPassForm(
                     .padding(horizontal = 30.dp),
                 leadingIcon = {
                     Icon(
-                        imageVector = Icons.Default.Person,
+                        imageVector = Icons.Default.Email,
                         contentDescription = "Enter Your Email", tint = MaterialTheme.colors.primary
                     )
                 },
@@ -143,7 +140,9 @@ fun SignInWithEmailAndPassForm(
                     modifier = Modifier
                         .align(Alignment.CenterEnd)
                         .clickable {
-                            // TODO: Navigate to forgot password screen
+                            navController.navigate(Screens.ResetPasswordScreen.route) {
+                                popUpTo(Screens.SignInWithEmailAndPassScreen.route)
+                            }
                         },
                     color = MaterialTheme.colors.primary,
                     style = MaterialTheme.typography.body2.copy(fontWeight = FontWeight.SemiBold)

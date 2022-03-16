@@ -31,4 +31,14 @@
     <string name="signing_up_failed">فشل تسجيل الحساب</string>
     <string name="error_occurred">لقد حدث خطأ. برجاء معاودة المحاولة في وقت لاحق.</string>
     <string name="enter_valid_info">برجاء ادخال بريد الكتروني وكلمة سر صحيحة</string>
+    <string name="reset_password">اعادة تعيين كلمة السر</string>
+    <string name="reset">اعادة التعيين</string>
+    <string name="enter_valid_email">برجاء ادخال بريد الكتروني صحيح.</string>
+    <string name="reset_failed">فشل اعادة التعيين!</string>
+    <string name="email_not_found">البريد الالكتروني غير موجود.</string>
+    <string name="user_not_registered">يبدو أن هذا البريد الإلكتروني لم يتم تسجيله من قبل ، هل تريد التسجيل؟</string>
+    <string name="cancel">اغلاق</string>
+    <string name="email_sent">تم ارسال ايميل علي بريدك الالكتروني لاعادة تعيين كلمة السر.</string>
+    <string name="check_email">تحقق من بريدك الالكتروني. لقد أرسلنا لك رسالة بريد إلكتروني للتحقق.</string>
+    <string name="refresh">تحديث</string>
 </resources>

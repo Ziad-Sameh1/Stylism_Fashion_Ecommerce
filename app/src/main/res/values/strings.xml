@@ -31,4 +31,14 @@
     <string name="signing_up_failed">Signing Up Failed</string>
     <string name="error_occurred">An error occurred. Please try again later.</string>
     <string name="enter_valid_info">Please enter a valid email and password.</string>
+    <string name="reset_password">Reset your password</string>
+    <string name="reset">Reset</string>
+    <string name="enter_valid_email">Enter a valid email.</string>
+    <string name="reset_failed">Reset Failed!</string>
+    <string name="email_not_found">Email not found!</string>
+    <string name="user_not_registered">Seems like this email didn\'t registered before, do you want to sign up?</string>
+    <string name="cancel">Cancel</string>
+    <string name="email_sent">Reset password email sent. Check your email inbox.</string>
+    <string name="check_email">Check your email. We have sent you a verification email.</string>
+    <string name="refresh">Refresh</string>
 </resources>

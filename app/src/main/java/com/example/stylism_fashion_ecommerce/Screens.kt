@@ -7,4 +7,6 @@ sealed class Screens(val route: String) {
     object SignInMethodsScreen : Screens("sign_in_methods_screen")
     object SignInWithEmailAndPassScreen : Screens("sign_in_with_email_and_pass_screen")
     object SignUpWithEmailAndPassScreen : Screens("sign_up_with_email_and_pass_screen")
+    object ResetPasswordScreen : Screens("reset_password_screen")
+    object CheckYourEmailScreen : Screens("check_your_email_screen")
 }

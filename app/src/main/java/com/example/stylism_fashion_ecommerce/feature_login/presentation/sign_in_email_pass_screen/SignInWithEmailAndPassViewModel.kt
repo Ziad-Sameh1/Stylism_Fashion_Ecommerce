@@ -4,6 +4,7 @@ import android.util.Log
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
+import com.example.stylism_fashion_ecommerce.SignedInUser
 import com.example.stylism_fashion_ecommerce.feature_login.data.resultListener.SignInWithEmailAndPassResultListener
 import com.example.stylism_fashion_ecommerce.feature_login.domain.use_cases.SignInWithEmailAndPasswordUseCase
 import com.example.stylism_fashion_ecommerce.utils.CONSTANTS.TAG
@@ -41,11 +42,11 @@ class SignInWithEmailAndPassViewModel @Inject constructor(
     /*********************************************************************************************************************/
 
     fun onEmailTextFieldValueChanges(newValue: String) {
-        _emailTextField.value = newValue
+        _emailTextField.value = newValue.trim()
     }
 
     fun onPassTextFieldValueChanges(newValue: String) {
-        _passTextField.value = newValue
+        _passTextField.value = newValue.trim()
     }
 
     fun onPassVisibleStateChanges(newValue: Boolean) {
@@ -86,6 +87,7 @@ class SignInWithEmailAndPassViewModel @Inject constructor(
                     SignInWithEmailAndPassResultListener {
                     override fun onSuccess(user: FirebaseUser) {
                         _isLoadingState.value = false
+                        SignedInUser.user = user
                         // TODO: Navigate To Home Screen 
                     }
 

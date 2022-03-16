@@ -13,9 +13,13 @@ import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.stylism_fashion_ecommerce.feature_login.presentation.check_your_email_screen.CheckVerificationEmailViewModel
+import com.example.stylism_fashion_ecommerce.feature_login.presentation.check_your_email_screen.CheckYourEmailScreen
 import com.example.stylism_fashion_ecommerce.feature_login.presentation.onboarding_screens.high_quality_product_screen.FirstBoardingScreen
 import com.example.stylism_fashion_ecommerce.feature_login.presentation.onboarding_screens.high_quality_product_screen.SecondBoardingScreen
 import com.example.stylism_fashion_ecommerce.feature_login.presentation.onboarding_screens.high_quality_product_screen.ThirdBoardingScreen
+import com.example.stylism_fashion_ecommerce.feature_login.presentation.reset_password_screen.ResetPasswordScreen
+import com.example.stylism_fashion_ecommerce.feature_login.presentation.reset_password_screen.ResetPasswordViewModel
 import com.example.stylism_fashion_ecommerce.feature_login.presentation.sign_in_email_pass_screen.SignInWithEmailAndPassViewModel
 import com.example.stylism_fashion_ecommerce.feature_login.presentation.sign_in_email_pass_screen.SignInWithEmailAndPasswordScreen
 import com.example.stylism_fashion_ecommerce.feature_login.presentation.sign_in_methods_screen.SignInMethodsScreen
@@ -34,6 +38,8 @@ class MainActivity : ComponentActivity() {
     private val signInMethodsViewModel: SignInMethodsViewModel by viewModels()
     private val signInWithEmailAndPassViewModel: SignInWithEmailAndPassViewModel by viewModels()
     private val signUpWithEmailAndPassViewModel: SignUpEmailAndPassViewModel by viewModels()
+    private val resetPasswordViewModel: ResetPasswordViewModel by viewModels()
+    private val checkVerificationEmailViewModel: CheckVerificationEmailViewModel by viewModels()
 
     @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -90,8 +96,27 @@ class MainActivity : ComponentActivity() {
                             navController = navController, focusManager = focusManager
                         )
                     }
+                    composable(route = Screens.ResetPasswordScreen.route) {
+                        ResetPasswordScreen(
+                            viewModel = resetPasswordViewModel,
+                            navController = navController,
+                            focusManager = focusManager,
+                            context = context
+                        )
+                    }
+                    composable(route = Screens.CheckYourEmailScreen.route) {
+                        CheckYourEmailScreen(
+                            navController = navController,
+                            viewModel = checkVerificationEmailViewModel
+                        )
+                    }
                 }
             }
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        checkVerificationEmailViewModel.isUserVerified()
     }
 }

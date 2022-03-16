@@ -68,7 +68,7 @@ fun SignUpWithEmailAndPasswordScreen(
                     .padding(horizontal = 10.dp)
             ) {
                 IconButton(onClick = { navController.navigateUp() }) {
-                    Icon(imageVector = Icons.Default.ArrowBack, contentDescription = "Go back")
+                    Icon(imageVector = Icons.Default.ArrowBack, contentDescription = "Go back", tint = MaterialTheme.colors.onSurface)
                 }
             }
             /**
@@ -121,7 +121,7 @@ fun SignUpWithEmailAndPasswordScreen(
                     .padding(horizontal = 30.dp),
                 leadingIcon = {
                     Icon(
-                        imageVector = Icons.Default.Person,
+                        imageVector = Icons.Default.Email,
                         contentDescription = "Enter Your Email", tint = MaterialTheme.colors.primary
                     )
                 },
@@ -194,10 +194,8 @@ fun SignUpWithEmailAndPasswordScreen(
             Button(
                 onClick = {
                     if (CheckNetwork.isInternetAvailable(context = context)) {
-                        Log.i(TAG, "SignUpWithEmailAndPasswordScreen: Internet Available")
-                        viewModel.signUpWithEmailAndPass()
+                        viewModel.signUpWithEmailAndPass(navController = navController)
                     } else {
-                        Log.i(TAG, "SignUpWithEmailAndPasswordScreen: Internet not available")
                         Toast.makeText(
                             context,
                             R.string.no_internet,
@@ -258,7 +256,7 @@ fun SignUpWithEmailAndPasswordScreen(
             Box(
                 modifier = Modifier
                     .fillMaxSize()
-                    .background(color = Color.Black.copy(alpha = 0.5f))
+                    .background(color = Color.Black.copy(alpha = 0.8f))
                     .align(Alignment.Center),
                 contentAlignment = Alignment.Center
             ) {
