@@ -41,4 +41,15 @@
     <string name="email_sent">تم ارسال ايميل علي بريدك الالكتروني لاعادة تعيين كلمة السر.</string>
     <string name="check_email">تحقق من بريدك الالكتروني. لقد أرسلنا لك رسالة بريد إلكتروني للتحقق.</string>
     <string name="refresh">تحديث</string>
+    <string name="error">خطأ!</string>
+    <string name="check_phone">يرجى التحقق من رمز البلد ورقم الهاتف ، ثم المحاولة مرة أخرى.</string>
+    <string name="enter_your_phone">ادخل رقم هاتفك</string>
+    <string name="enter_your_phone_desc">"انقر على \"متابعة\" للحصول على رسالة نصية برمز التأكيد لمساعدتك في استخدام "</string>
+    <string name="country_code">كود البلد</string>
+    <string name="phone_number">رقم الهاتف</string>
+    <string name="continue_btn">استمرار</string>
+    <string name="wrong_code">برجاء ادخال كود صحيح، ثم معاود المحاولة</string>
+    <string name="enter_otp">ادخل رمز التحقق</string>
+    <string name="enter_otp_desc">تحقق من رسائل SMS الخاصة بك. لقد أرسلنا إليك رقم تعريف شخصيًا على</string>
+    <string name="verify_btn">تحقق</string>
 </resources>

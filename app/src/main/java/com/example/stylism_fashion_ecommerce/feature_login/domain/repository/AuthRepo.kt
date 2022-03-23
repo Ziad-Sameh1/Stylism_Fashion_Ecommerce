@@ -1,7 +1,9 @@
 package com.example.stylism_fashion_ecommerce.feature_login.domain.repository
 
+import android.app.Activity
 import com.example.stylism_fashion_ecommerce.feature_login.data.resultListener.*
 import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.auth.PhoneAuthCredential
 
 interface AuthRepo {
     fun signInWithEmailAndPass(
@@ -27,5 +29,22 @@ interface AuthRepo {
         confirmPasswordResetResultListener: ConfirmPasswordResetResultListener
     )
 
-    fun getSignedInUser() : FirebaseUser?
+    fun getSignedInUser(): FirebaseUser?
+
+    fun sendOTP(
+        activity: Activity,
+        phoneNumber: String,
+        sendOTPResultListener: SendOTPResultListener,
+        signInWithPhoneNumberResultListener: SignInWithPhoneNumberResultListener
+    )
+
+    fun signInWithPhoneNumber(
+        code: String,
+        signInWithPhoneNumberResultListener: SignInWithPhoneNumberResultListener
+    )
+
+    fun signInWithPhoneAuthCredential(
+        credential: PhoneAuthCredential,
+        signInWithPhoneNumberResultListener: SignInWithPhoneNumberResultListener
+    )
 }

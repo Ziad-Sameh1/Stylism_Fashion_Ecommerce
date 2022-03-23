@@ -43,14 +43,8 @@ class MainViewModel @Inject constructor(
                     Log.i(TAG, "Not First Time -> User not authenticated")
                     _startDestination.value = Screens.SignInMethodsScreen.route
                 } else {
-                    if (!firebaseUser.isEmailVerified) {
-                        Log.i(TAG, "Not First Time -> Waiting for email verification")
-                        Log.i(TAG, "Useremail: ${firebaseUser.email}")
-                        _startDestination.value = Screens.CheckYourEmailScreen.route
-                    } else {
-                        // TODO: Go to Home screen
-                        Log.i(TAG, "Not First Time -> User authenticated and verified")
-                    }
+                    // TODO: Go to home screen
+                    Log.i(TAG, "Not First Time -> User authenticated and verified")
                 }
             }
             _isLoadingState.value = false

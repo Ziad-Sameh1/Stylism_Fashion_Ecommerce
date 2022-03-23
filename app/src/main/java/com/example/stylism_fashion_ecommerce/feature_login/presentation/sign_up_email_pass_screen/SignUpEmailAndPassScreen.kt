@@ -9,6 +9,7 @@ import androidx.compose.foundation.*
 import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
@@ -68,7 +69,11 @@ fun SignUpWithEmailAndPasswordScreen(
                     .padding(horizontal = 10.dp)
             ) {
                 IconButton(onClick = { navController.navigateUp() }) {
-                    Icon(imageVector = Icons.Default.ArrowBack, contentDescription = "Go back", tint = MaterialTheme.colors.onSurface)
+                    Icon(
+                        imageVector = Icons.Default.ArrowBack,
+                        contentDescription = "Go back",
+                        tint = MaterialTheme.colors.onSurface
+                    )
                 }
             }
             /**
@@ -134,7 +139,9 @@ fun SignUpWithEmailAndPasswordScreen(
                 keyboardOptions = KeyboardOptions(
                     keyboardType = KeyboardType.Email,
                     imeAction = ImeAction.Done
-                ), shape = RoundedCornerShape(10.dp)
+                ),
+                keyboardActions = KeyboardActions(onDone = { focusManager.clearFocus() }),
+                shape = RoundedCornerShape(10.dp)
             )
             Spacer(modifier = Modifier.height(15.dp))
             /**
@@ -185,7 +192,9 @@ fun SignUpWithEmailAndPasswordScreen(
                 keyboardOptions = KeyboardOptions(
                     keyboardType = KeyboardType.Password,
                     imeAction = ImeAction.Done
-                ), shape = RoundedCornerShape(10.dp)
+                ),
+                keyboardActions = KeyboardActions(onDone = { focusManager.clearFocus() }),
+                shape = RoundedCornerShape(10.dp)
             )
             Spacer(modifier = Modifier.height(50.dp))
             /**

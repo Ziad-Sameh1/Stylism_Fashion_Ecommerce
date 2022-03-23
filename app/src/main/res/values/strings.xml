@@ -41,4 +41,16 @@
     <string name="email_sent">Reset password email sent. Check your email inbox.</string>
     <string name="check_email">Check your email. We have sent you a verification email.</string>
     <string name="refresh">Refresh</string>
+    <string name="error">Error!</string>
+    <string name="check_phone">Please check your country code and phone number, then try again.</string>
+    <string name="enter_your_phone">Enter your phone number</string>
+    <string name="enter_your_phone_desc">Tap \"Continue\"  to get an SMS confirmation to help you use</string>
+    <string name="country_code">Country code</string>
+    <string name="phone_number">Phone number</string>
+    <string name="continue_btn">Continue</string>
+    <string name="wrong_code">Please enter a correct code, then try again.</string>
+    <string name="enter_otp">Enter your OTP</string>
+    <string name="enter_otp_desc">Check your SMS messages. We\'ve sent you a PIN at</string>
+    <string name="verify_btn">Verify</string>
+    <string name="your_web_client_id" translatable="false">883480871779-dqoki3hj7t20o0pseuannpga8kj9omjf.apps.googleusercontent.com</string>
 </resources>

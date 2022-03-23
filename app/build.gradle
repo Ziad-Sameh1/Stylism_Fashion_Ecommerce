@@ -79,6 +79,7 @@ dependencies {
     // Firebase Authentication
     implementation 'com.google.firebase:firebase-auth'
     implementation 'com.google.android.gms:play-services-auth:20.1.0'
+    implementation 'com.google.firebase:firebase-auth-ktx'
 
     // Nav Component
     implementation "androidx.navigation:navigation-compose:$nav_version"

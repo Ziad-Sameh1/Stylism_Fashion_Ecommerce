@@ -1,5 +1,8 @@
 package com.example.stylism_fashion_ecommerce.feature_login.presentation.sign_in_methods_screen.composables
 
+import android.content.Context
+import android.content.Intent
+import android.util.Log
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.*
@@ -15,19 +18,18 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import androidx.navigation.compose.rememberNavController
 import com.example.stylism_fashion_ecommerce.R
 import com.example.stylism_fashion_ecommerce.Screens
 import com.example.stylism_fashion_ecommerce.ui.theme.poppinsFont
+import com.example.stylism_fashion_ecommerce.utils.CONSTANTS.TAG
 
 @Composable
 fun SignInMethodsScreenChooseMethodColumn(
     navController: NavController,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier, context: Context
 ) {
     /**
      * Header
@@ -100,7 +102,7 @@ fun SignInMethodsScreenChooseMethodColumn(
             }
         }
         /**
-         * Sign in with Email And Pass Button
+         * Sign in with Phone number Button
          * */
         Row(
             horizontalArrangement = Arrangement.SpaceEvenly,
@@ -120,7 +122,9 @@ fun SignInMethodsScreenChooseMethodColumn(
             ) {
                 Button(
                     onClick = {
-                        // TODO: Navigate to sign in with phone number screen
+                        navController.navigate(Screens.SendOTPScreen.route) {
+                            popUpTo(Screens.SignInMethodsScreen.route)
+                        }
                     },
                     colors = ButtonDefaults.buttonColors(backgroundColor = MaterialTheme.colors.surface),
                     modifier = Modifier.fillMaxWidth()
@@ -161,7 +165,7 @@ fun SignInMethodsScreenChooseMethodColumn(
             ) {
                 Button(
                     onClick = {
-                        // TODO: Navigate to sign in with google screen
+                        Log.i(TAG, "SignInMethodsScreenChooseMethodColumn: sign in with google clicked")
                     },
                     colors = ButtonDefaults.buttonColors(backgroundColor = MaterialTheme.colors.surface),
                     modifier = Modifier.fillMaxWidth()
@@ -182,11 +186,4 @@ fun SignInMethodsScreenChooseMethodColumn(
             }
         }
     }
-}
-
-@Preview(showBackground = true)
-@Composable
-fun Preview21() {
-    val navController = rememberNavController()
-    SignInMethodsScreenChooseMethodColumn(navController = navController)
 }
