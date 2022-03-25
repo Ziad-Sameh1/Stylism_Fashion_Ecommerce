@@ -34,6 +34,7 @@ import com.example.stylism_fashion_ecommerce.ui.theme.DarkSurface
 import com.example.stylism_fashion_ecommerce.ui.theme.Stylism_Fashion_EcommerceTheme
 import com.example.stylism_fashion_ecommerce.ui.theme.WhiteSurface
 import com.example.stylism_fashion_ecommerce.utils.CONSTANTS
+import com.example.stylism_fashion_ecommerce.utils.CheckNetwork
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -51,11 +52,11 @@ class MainActivity : ComponentActivity() {
     @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        installSplashScreen().apply {
-            setKeepOnScreenCondition {
-                mainViewModel.isLoadingState.value
+            installSplashScreen().apply {
+                setKeepOnScreenCondition {
+                    mainViewModel.isLoadingState.value
+                }
             }
-        }
         setContent {
             val navController = rememberNavController()
             val systemUiController = rememberSystemUiController()
@@ -87,7 +88,7 @@ class MainActivity : ComponentActivity() {
                     composable(route = Screens.SignInMethodsScreen.route) {
                         SignInMethodsScreen(
                             navController = navController,
-                            viewModel = signInMethodsViewModel, context = context
+                            viewModel = signInMethodsViewModel
                         )
                     }
                     composable(route = Screens.SignInWithEmailAndPassScreen.route) {

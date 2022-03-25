@@ -94,5 +94,8 @@ dependencies {
     // Truth Library
     testImplementation "com.google.truth:truth:1.1.3"
 
+    // Firestore
+    implementation 'com.google.firebase:firebase-firestore-ktx'
+
 }
 apply plugin: 'com.google.gms.google-services'

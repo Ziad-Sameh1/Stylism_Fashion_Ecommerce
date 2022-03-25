@@ -1,6 +1,5 @@
 package com.example.stylism_fashion_ecommerce.feature_login.presentation.sign_in_methods_screen
 
-import android.content.Context
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -14,8 +13,7 @@ import com.example.stylism_fashion_ecommerce.feature_login.presentation.sign_in_
 @Composable
 fun SignInMethodsScreen(
     navController: NavController,
-    viewModel: SignInMethodsViewModel,
-    context: Context
+    viewModel: SignInMethodsViewModel
 ) {
     viewModel.changeIsFirstTime()
     Column(
@@ -26,7 +24,7 @@ fun SignInMethodsScreen(
         SignInMethodsScreenImage(modifier = Modifier.weight(2f))
         SignInMethodsScreenChooseMethodColumn(
             navController = navController,
-            modifier = Modifier.weight(2f), context = context
+            modifier = Modifier.weight(2f)
         )
     }
 }

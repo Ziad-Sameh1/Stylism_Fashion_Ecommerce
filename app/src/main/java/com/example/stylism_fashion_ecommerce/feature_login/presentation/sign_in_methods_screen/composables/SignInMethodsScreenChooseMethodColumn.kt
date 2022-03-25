@@ -29,7 +29,7 @@ import com.example.stylism_fashion_ecommerce.utils.CONSTANTS.TAG
 @Composable
 fun SignInMethodsScreenChooseMethodColumn(
     navController: NavController,
-    modifier: Modifier = Modifier, context: Context
+    modifier: Modifier = Modifier
 ) {
     /**
      * Header
@@ -43,7 +43,7 @@ fun SignInMethodsScreenChooseMethodColumn(
     ) {
         Text(
             text = stringResource(id = R.string.sign_in),
-            style = MaterialTheme.typography.h4.copy(
+            style = MaterialTheme.typography.h3.copy(
                 fontFamily = poppinsFont,
                 fontWeight = FontWeight.Bold,
                 letterSpacing = 1.sp
@@ -52,10 +52,10 @@ fun SignInMethodsScreenChooseMethodColumn(
             color = MaterialTheme.colors.primary
         )
     }
-    Spacer(modifier = Modifier.height(20.dp))
+    Spacer(modifier = Modifier.height(40.dp))
     Column(
         modifier = modifier,
-        verticalArrangement = Arrangement.SpaceAround,
+        verticalArrangement = Arrangement.SpaceEvenly,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         /**
@@ -138,47 +138,6 @@ fun SignInMethodsScreenChooseMethodColumn(
                     Spacer(modifier = Modifier.width(15.dp))
                     Text(
                         text = stringResource(id = R.string.sign_in_with_phone_number),
-                        color = if (isSystemInDarkTheme()) MaterialTheme.colors.onSurface else MaterialTheme.colors.primary,
-                        modifier = Modifier.padding(vertical = 15.dp)
-                    )
-                }
-            }
-        }
-        /**
-         * Sign in with Google
-         * */
-        Row(
-            horizontalArrangement = Arrangement.SpaceAround,
-            verticalAlignment = Alignment.CenterVertically,
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(horizontal = 30.dp)
-        ) {
-            Card(
-                elevation = 8.dp,
-                backgroundColor = MaterialTheme.colors.surface,
-                shape = RoundedCornerShape(15.dp),
-                border = if (isSystemInDarkTheme()) BorderStroke(
-                    width = 0.dp,
-                    color = MaterialTheme.colors.surface
-                ) else BorderStroke(width = 3.dp, color = MaterialTheme.colors.primary),
-            ) {
-                Button(
-                    onClick = {
-                        Log.i(TAG, "SignInMethodsScreenChooseMethodColumn: sign in with google clicked")
-                    },
-                    colors = ButtonDefaults.buttonColors(backgroundColor = MaterialTheme.colors.surface),
-                    modifier = Modifier.fillMaxWidth()
-                ) {
-
-                    Icon(
-                        painter = painterResource(id = R.drawable.ic_google),
-                        contentDescription = "Sign in with Google", modifier = Modifier.size(24.dp),
-                        tint = if (isSystemInDarkTheme()) MaterialTheme.colors.onSurface else MaterialTheme.colors.primary
-                    )
-                    Spacer(modifier = Modifier.width(15.dp))
-                    Text(
-                        text = stringResource(id = R.string.sign_in_with_google),
                         color = if (isSystemInDarkTheme()) MaterialTheme.colors.onSurface else MaterialTheme.colors.primary,
                         modifier = Modifier.padding(vertical = 15.dp)
                     )

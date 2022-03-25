@@ -11,6 +11,7 @@ import com.example.stylism_fashion_ecommerce.utils.CONSTANTS.TAG
 import com.google.firebase.auth.FirebaseUser
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import java.util.*
 import javax.inject.Inject
 
 @HiltViewModel
@@ -34,20 +35,21 @@ class MainViewModel @Inject constructor(
              * ... user opened the app before and he is signed in before -> is verified -> open home screen
              * ... user opened the app before and he is signed in before -> not verified -> open verification screen
              * */
-            firebaseUser?.reload()
             if (sharedPreferences.getBoolean(CONSTANTS.IS_FIRST_TIME, true)) {
                 Log.i(TAG, "First Time Opening")
                 _startDestination.value = Screens.FirstBoardingScreen.route
+                _isLoadingState.value = false
             } else {
                 if (firebaseUser == null) {
                     Log.i(TAG, "Not First Time -> User not authenticated")
                     _startDestination.value = Screens.SignInMethodsScreen.route
+                    _isLoadingState.value = false
                 } else {
                     // TODO: Go to home screen
                     Log.i(TAG, "Not First Time -> User authenticated and verified")
+                    _isLoadingState.value = false
                 }
             }
-            _isLoadingState.value = false
         }
     }
 }

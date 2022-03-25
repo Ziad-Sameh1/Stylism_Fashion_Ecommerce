@@ -362,7 +362,7 @@ fun EnterOTPScreen(
             Button(
                 onClick = {
                     if (CheckNetwork.isInternetAvailable(context = context)) {
-                        viewModel.verifyOTP()
+                        viewModel.verifyOTP(navController = navController)
                     } else {
                         Toast.makeText(
                             context,
